@@ -21,6 +21,8 @@ docker run --name django-blog \
 -p 8001:8000 \
 -dit bin/django-blog /bin/bash
 
+docker exec django-blog gunicorn binblog.wsgi --bind 0.0.0.0:8000 --daemon
+
 echo "---------End django-blog image---------"
 # 进入容器的方法 django-blog 容器名
 # docker container inspect --format "{{.State.Pid}}" django-blog

@@ -11,5 +11,3 @@ COPY binblog.conf /etc/nginx/conf.d/
 
 # 这样创建并进入容器查看相关配置文件
 # docker run -i -t  daocloud.io/nginx:1.14 /bin/bash
-
-RUN nginx

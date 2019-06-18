@@ -12,8 +12,11 @@ echo "---------Start nginx image---------"
 docker run --name nginx \
 --link django-blog \
 --volumes-from django-blog \
--p 8000:8000 \
--p 80:80 \
+-p 80:8000 \
+-p 8000:80 \
 -dit bin/nginx /bin/bash
+
+docker exec -d nginx nginx
+
 #
 echo "---------End nginx image---------"

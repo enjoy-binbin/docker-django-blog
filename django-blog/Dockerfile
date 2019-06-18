@@ -27,7 +27,3 @@ RUN pip install --no-cache-dir -i http://mirrors.aliyun.com/pypi/simple/ -r ./Dj
 RUN pip install --no-cache-dir -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com gunicorn
 
 WORKDIR /var/www/Django-blog
-
-# --daemon 守护进程方式后台运行
-# gunicorn位置: /usr/local/bin/gunicorn
-RUN gunicorn binblog.wsgi --bind 0.0.0.0:8000 --daemon
