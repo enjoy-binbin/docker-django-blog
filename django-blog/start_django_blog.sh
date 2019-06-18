@@ -21,6 +21,12 @@ docker run --name django-blog \
 -p 8001:8000 \
 -dit bin/django-blog /bin/bash
 
+# 进行数据库迁移, 感觉可以多写一个sh文件用于执行, 或者写到dockfile里
+docker exec django-blog python manage.py makemigrations
+docker exec django-blog python manage.py migrate
+docker exec django-blog python manage.py collectstatic --noinput
+docker exec django-blog python manage.py compress --force
+
 docker exec django-blog gunicorn binblog.wsgi --bind 0.0.0.0:8000 --daemon
 
 echo "---------End django-blog image---------"
