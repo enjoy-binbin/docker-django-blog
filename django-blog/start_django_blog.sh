@@ -17,7 +17,7 @@ docker run --name django-blog \
 -v /var/www/Django-blog \
 -p 8001:8000 \
 -d bin/django-blog:v1
-# -dit bin/django-blog /bin/bash
+# -dit bin/django-blog:v1 /bin/bash
 
 # 进行数据库迁移, 感觉可以多写一个sh文件用于执行, 或者写到dockfile里
 # docker exec django-blog python manage.py makemigrations
