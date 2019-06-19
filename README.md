@@ -10,6 +10,7 @@
 # 使用到的镜像有daocloud.io/nginx:1.14、daocloud.io/python:3.6、daocloud.io/mysql:5.6.30
 # 再下面有自己的笔记步骤，最后的体验。这几个镜像里用到了ubuntu/centos/debian
 # 自己前后弄了好几天，docker使用没有多久，项目并不是最佳实践，仅供学习。
+# mysql账号为root, 密码123456。 Django-admin: fake_admin fake_admin。自用需要登录后台/admin修改密码
 
 # 克隆本项目
 git clone https://github.com/enjoy-binbin/docker-django-blog.git
