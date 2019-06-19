@@ -15,8 +15,8 @@ echo "---------Start mysql image---------"
 docker run --name mysql \
 -p 3307:3306 \
 -e MYSQL_ROOT_PASSWORD=123456 \
--d daocloud.io/mysql:5.6.30 \
---character-set-server=utf8 --collation-server=utf8_unicode_ci
+--character-set-server=utf8 --collation-server=utf8_unicode_ci \
+-d daocloud.io/mysql:5.6.30 
 #
 echo "---------End mysql image---------"
 #

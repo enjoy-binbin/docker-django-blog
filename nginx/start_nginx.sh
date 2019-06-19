@@ -14,9 +14,7 @@ docker run --name nginx \
 --volumes-from django-blog \
 -p 80:8000 \
 -p 8000:80 \
--dit bin/nginx /bin/bash
-
-docker exec -d nginx nginx
+-d bin/nginx
 
 #
 echo "---------End nginx image---------"

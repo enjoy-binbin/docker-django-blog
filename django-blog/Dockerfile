@@ -27,3 +27,5 @@ RUN pip install --no-cache-dir -i http://mirrors.aliyun.com/pypi/simple/ -r ./Dj
 RUN pip install --no-cache-dir -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com gunicorn
 
 WORKDIR /var/www/Django-blog
+
+CMD python manage.py makemigrations; python manage.py migrate; python manage.py create_fake_data; python manage.py collectstatic --noinput; python manage.py compress --force; gunicorn binblog.wsgi --bind 0.0.0.0:8000
