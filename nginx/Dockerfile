@@ -13,4 +13,4 @@ MAINTAINER binbin <binloveplay1314@qq.com>
 COPY binblog.conf /etc/nginx/conf.d/
 
 # Run nginx
-CMD ["/usr/sbin/nginx"]
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
