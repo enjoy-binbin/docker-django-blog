@@ -16,7 +16,7 @@ echo "---------Start django-blog image---------"
 # bin/django-blog 镜像名
 # 执行的命令 gunicorn安装后是在那里的
 docker run --name django-blog \
---link mysql \
+--link mysql:mysql \
 -v /var/www/Django-blog \
 -p 8001:8000 \
 -d bin/django-blog:v1

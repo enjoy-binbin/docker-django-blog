@@ -1,5 +1,7 @@
 #!/bin/bash
 #
+# 删除所有None构建失败的镜像
+# docker images | grep none | awk '{print $3}' | xargs docker rmi
 # 删除本机所有容器
 # docker ps -a | awk '{print $1}' | xargs docker rm -f
 
@@ -16,3 +18,5 @@ sleep 3
 echo "start nginx ----------------"
 cd ../nginx
 source ./start_nginx.sh
+
+cd ..
