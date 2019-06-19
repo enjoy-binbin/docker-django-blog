@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+# 执行顺序 先mysql、然后web、最后nginx
 # 删除所有None构建失败的镜像
 # docker images | grep none | awk '{print $3}' | xargs docker rmi
 # 删除本机所有容器

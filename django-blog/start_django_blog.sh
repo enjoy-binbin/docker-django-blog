@@ -7,7 +7,7 @@ docker build -t bin/django-blog:v1 .
 echo "---------Start django-blog image---------"
 # 启动django-blog容器(先mysql、再django-blog、再nginx)
 # --link 链接mysql容器, 注意容器的启动顺序 在容器里面可以ping mysql
-# -v 挂载共享目录, 把项目代码共享出去
+# -v 挂载共享目录, 把项目代码共享出去给后面的nginx
 # -p 端口映射, 容器内的8000映射到主机的8001
 # -d 后台运行
 # bin/django-blog 镜像名
