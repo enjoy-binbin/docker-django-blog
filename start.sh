@@ -1,5 +1,8 @@
 #!/bin/bash
 #
+# 删除本机所有容器
+# docker ps -a | awk '{print $1}' | xargs docker rm -f
+
 echo "start mysql ----------------"
 cd mysql
 source ./start_mysql.sh

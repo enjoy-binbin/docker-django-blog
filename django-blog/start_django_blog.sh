@@ -2,10 +2,10 @@
 # 根据Dockfile创建镜像, 并且启动容器 by binbin
 
 # docker exec 执行mysql容器里的mysql命令 创建数据库
-docker exec -d mysql mysql -uroot -p123456 -e "create database blog;"
+docker exec -d mysql mysql -uroot -p123456 -e "create database blog default character set utf8 collate utf8_general_ci;"
 
 # 根据当前目录下的Dockerfile创建镜像
-docker build -t bin/django-blog .
+docker build -t bin/django-blog:v1 .
 
 echo "---------Start django-blog image---------"
 # 启动django-blog容器(先mysql、再django-blog、再nginx)
@@ -19,7 +19,7 @@ docker run --name django-blog \
 --link mysql \
 -v /var/www/Django-blog \
 -p 8001:8000 \
--d bin/django-blog
+-d bin/django-blog:v1
 # -dit bin/django-blog /bin/bash
 
 # 进行数据库迁移, 感觉可以多写一个sh文件用于执行, 或者写到dockfile里

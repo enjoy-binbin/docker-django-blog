@@ -8,14 +8,12 @@
 # -v $PWD/data:/var/lib/mysql 将当前目录下的data目录挂载到容器的 /var/lib/mysql, 还有其他文件也是同理
 # -d 运行在后台
 # daocloud.io/mysql:5.6.30 对应的镜像名称
-# utf8编码设置
 #
 echo "---------Start mysql image---------"
 #
 docker run --name mysql \
 -p 3307:3306 \
 -e MYSQL_ROOT_PASSWORD=123456 \
---character-set-server=utf8 --collation-server=utf8_unicode_ci \
 -d daocloud.io/mysql:5.6.30 
 #
 echo "---------End mysql image---------"
