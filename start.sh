@@ -8,12 +8,15 @@
 echo "start mysql ----------------"
 cd mysql
 source ./start_mysql.sh
-sleep 3
+sleep 2
+# docker exec 执行mysql容器里的mysql命令 创建数据库
+docker exec -it mysql mysql -uroot -p123456 -e "create database blog default character set utf8 collate utf8_general_ci;"
+sleep 1
 
 echo "start django-blog ----------------"
 cd ../django-blog
 source ./start_django_blog.sh
-sleep 3
+sleep 2
 
 echo "start nginx ----------------"
 cd ../nginx
