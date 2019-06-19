@@ -21,6 +21,8 @@ RUN git clone https://github.com/enjoy-binbin/Django-blog.git
 # 复制配置文件
 RUN cp ./Django-blog/binblog/settings_docker.py ./Django-blog/binblog/settings.py
 
+RUN pip install --upgrade pip
+
 # 安装依赖, 使用阿里云镜像
 RUN pip install --no-cache-dir -i http://mirrors.aliyun.com/pypi/simple/ -r ./Django-blog/requirements.txt --trusted-host mirrors.aliyun.com
 

@@ -16,6 +16,9 @@ docker run --name mysql \
 -e MYSQL_ROOT_PASSWORD=123456 \
 -d daocloud.io/mysql:5.6.30 
 #
+# docker exec 执行mysql容器里的mysql命令 创建数据库
+docker exec -d mysql mysql -uroot -p123456 -e "create database blog default character set utf8 collate utf8_general_ci;"
+#
 echo "---------End mysql image---------"
 #
 # 进入容器的方法 mysql 容器名

@@ -1,9 +1,6 @@
 #!/bin/bash
 # 根据Dockfile创建镜像, 并且启动容器 by binbin
 
-# docker exec 执行mysql容器里的mysql命令 创建数据库
-docker exec -d mysql mysql -uroot -p123456 -e "create database blog default character set utf8 collate utf8_general_ci;"
-
 # 根据当前目录下的Dockerfile创建镜像
 docker build -t bin/django-blog:v1 .
 
